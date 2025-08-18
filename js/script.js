@@ -73,7 +73,7 @@ const playMusic = (track, pause = false) => {
 };
 
 async function displayAlbums() {
-  let a = await fetch(`http://192.168.137.1:3000/songs/`);
+  let a = await fetch(`/songs/`);
   let response = await a.text();
   console.log(response);
   let div = document.createElement("div");
@@ -89,7 +89,7 @@ async function displayAlbums() {
 
       // Get the metadata of the folder
       let a = await fetch(
-        `http://192.168.137.1:3000/songs/${folder}/info.json`
+        `/songs/${folder}/info.json`
       );
       let response = await a.json();
       console.log(response);
@@ -215,3 +215,4 @@ async function main() {
     });
 }
 main();
+
